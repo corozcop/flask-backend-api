@@ -1,7 +1,7 @@
 # flask-backend-api
 Backend RESTful API with Flask and SQLAlchemy
 
-##Instalation
+## Installation
 ```bash
 $ virtualenv venv -p python3
 $ source venv\bin\activate
