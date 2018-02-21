@@ -8,6 +8,7 @@ __pycache__/
 *.sqlite
 # C extensions
 *.so
+.idea
 
 # Distribution / packaging
 .Python
