@@ -2,8 +2,10 @@ from flask import Flask
 from flask_restful import Resource, Api, reqparse
 import logging.config
 import settings
-from resources.user import User, UserRegister, UserLogin
-from resources.group import GroupsList, Groups
+# from resources.user import User, UserRegister, UserLogin
+# from resources.group import GroupsList, Groups
+from resources.customer import CustomerList
+
 from flask_cors import CORS
 from flask_jwt_extended import JWTManager
 
@@ -20,12 +22,12 @@ app.secret_key = settings.JWT_SECRET_KEY
 jwt = JWTManager(app)
 
 api = Api(app, prefix='/api/v1')
-
-api.add_resource(User, '/users')
-api.add_resource(UserRegister, '/register')
-api.add_resource(UserLogin, '/login')
-api.add_resource(GroupsList, '/groups')
-api.add_resource(Groups, '/group', '/group/<string:_id>')
+api.add_resource(CustomerList, '/customers')
+# api.add_resource(User, '/users')
+# api.add_resource(UserRegister, '/register')
+# api.add_resource(UserLogin, '/login')
+# api.add_resource(GroupsList, '/groups')
+# api.add_resource(Groups, '/group', '/group/<string:_id>')
 
 @app.before_first_request
 def create_tables():
